@@ -88,13 +88,35 @@ $( document ).ready(function() {
     console.log("COMBO!");
     _saveDraft();
   });
-
+  Mousetrap.bind(['command+ f', 'meta+s'], function(e) {
+    if (e.preventDefault) {
+        e.preventDefault();
+    } else {
+        // internet explorer
+        e.returnValue = false;
+    }
+    console.log("command + f overrided");
+    _saveDraft();
+  });
 
 
   Mousetrap.bind(['t r a v i s'], function(e) {
     console.log("You just spelled your name")
      // functionality that will run when you type the word qwerty
   });
+
+  Mousetrap.bind(['command+', 'meta+s'], function(e) {
+    if (e.preventDefault) {
+        e.preventDefault();
+    } else {
+        // internet explorer
+        e.returnValue = false;
+    }
+    console.log("COMBO!");
+    _saveDraft();
+  });
+
+
 
 
 
